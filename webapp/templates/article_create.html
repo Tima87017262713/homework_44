@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Article Create{% endblock %}
+{% block content %}
+    <h1 style="color: blue">New Add</h1>
+<div class="form">
+    <form action="{% url 'article_add' %}" method="post">
+        {% csrf_token %}
+        <div class="form_row">
+            <label for="title">Heading</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <div class="form_row">
+            <label for="text">Description</label>
+            <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        </div>
+        <div class="form_row">
+         <select name = "author">
+
+         <option value="new">New</option>
+             <option value="old">old</option>
+             <option value="porcess">porcess</option>
+
+         </select>
+
+        </div>
+            <input type="date" name="'created_at'" id="created_at">
+
+        <div class="form_row">
+            <input type="submit" style="color: #a41515">
+        </div>
+
+    </form>
+</div>
+{% endblock %}
+

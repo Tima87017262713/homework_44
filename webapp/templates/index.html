@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block menu %}
+    <a href="{% url 'article_add' %}" style="color: #f5dd5d">Add </a>
+{% endblock %}
+{% block content %}
+    <h1 style="color: #a41515">My Home</h1>
+    {% for article in articles %}
+        <h2>{{ article.title }}</h2>
+        <h2>{{ article.text }}</h2>
+
+
+        <p>
+            <a style="color: #a41515" href="{% url 'article_detail' article.pk %}">More detailed... </a>
+        </p>
+    {% endfor %}
+{% endblock %}
